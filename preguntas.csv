@@ -1,0 +1,75 @@
+pregunta,opcion1,opcion2,opcion3,opcion4,respuesta
+¿Qué componente convierte la presión en movimiento?,Manómetro,Actuador,Compresor,Filtro,Actuador
+¿Qué significa 'actuador lineal'?,Cambia temperatura,Se mueve en línea recta,Gira,Reduce presión,Se mueve en línea recta
+¿Qué gas se utiliza comúnmente en neumática?,Hidrógeno,Dióxido de carbono,Aire,Oxígeno,Aire
+¿Qué unidad se usa para medir la presión del aire?,Voltios,Bar,Amperios,Hertz,Bar
+¿Qué tipo de energía utiliza un sistema neumático?,Neumática,Térmica,Hidráulica,Eléctrica,Neumática
+¿Cuál es la función de un filtro en neumática?,Almacenar aire,Eliminar humedad e impurezas,Agregar aceite,Medir presión,Eliminar humedad e impurezas
+¿Qué ocurre si hay fuga de aire?,No pasa nada,Se aumenta la presión,Se apaga el sistema,Se reduce la eficiencia,Se reduce la eficiencia
+¿Qué dispositivo se utiliza para iniciar o detener el flujo de aire?,Compresor,Actuador,Motor,Válvula,Válvula
+¿Cuál es el componente que almacena aire comprimido?,Compresor,Filtro,Depósito,Actuador,Depósito
+¿Qué hace un relé en un circuito electroneumático?,Actúa como interruptor controlado,Filtra aire,Genera aire,Reduce voltaje,Actúa como interruptor controlado
+¿Qué tipo de señal controla una válvula solenoide?,Mecánica,Eléctrica,Térmica,Neumática,Eléctrica
+¿Qué ocurre si no hay alimentación eléctrica en una válvula solenoide normalmente cerrada?,Bloquea el paso de aire,Activa el cilindro,Aumenta la presión,Permite el paso de aire,Bloquea el paso de aire
+¿Qué componente detecta la posición de un cilindro?,Válvula,Sensor de proximidad,Compresor,Relé,Sensor de proximidad
+¿Qué elemento permite controlar una válvula neumática eléctricamente?,Interruptor,Filtro,Solenoide,Manómetro,Solenoide
+¿Qué representa una bobina en un diagrama ladder?,Contador,Temporizador,Entrada digital,Salida digital,Salida digital
+¿Qué hace un contacto normalmente abierto en ladder?,No tiene función,Permite el paso siempre,Está cerrado al inicio,Solo permite paso si está activado,Solo permite paso si está activado
+¿Qué tipo de señal puede leer una entrada digital de un PLC?,Corriente alterna,Señales analógicas,0 o 1,Temperatura,0 o 1
+¿Qué significa PLC?,Programa Lógico de Códigos,Proceso de Línea de Control,Controlador Lógico Programable,Potente Lógica de Control,Controlador Lógico Programable
+¿Cuál es el lenguaje más común para programar un PLC?,C++,Ladder,Python,Java,Ladder
+¿Para qué sirve un temporizador en un PLC?,Contar eventos,Encender un motor,Detectar temperatura,Controlar tiempo,Controlar tiempo
+¿Qué es un actuador rotativo?,Mueve en línea recta,Libera calor,Genera electricidad,Gira sobre un eje,Gira sobre un eje
+¿Qué hace un manómetro en un sistema neumático?,Filtrar aire,Medir presión,Regular caudal,Almacenar aire,Medir presión
+¿Cómo se llama el proceso de regular el caudal de aire?,Lubricación,Regulación,Control de caudal,Filtración,Control de caudal
+¿Qué es un circuito ladder?,Un lenguaje de programación,Una herramienta de diseño mecánico,Un sistema hidráulico,Un tipo de motor,Un lenguaje de programación
+¿Qué tipo de válvula cambia de posición al recibir una señal eléctrica?,Válvula manual,Válvula solenoide,Válvula de seguridad,Válvula de escape,Válvula solenoide
+¿Qué hace un compresor en un sistema neumático?,Filtra aire,Libera aire,Reduce presión,Aumenta presión,Aumenta presión
+¿Cuál es la ventaja principal de los sistemas neumáticos?,Bajo costo,Elevada precisión,Alta velocidad,Bajo mantenimiento,Bajo mantenimiento
+¿Qué tipo de válvula permite el flujo solo en una dirección?,Válvula de regulación,Válvula de retención,Válvula solenoide,Válvula de seguridad,Válvula de retención
+¿Qué se requiere para operar un cilindro de doble efecto?,Dos señales de aire,Una señal de aire,Un sensor de temperatura,Un motor, Dos señales de aire
+¿Qué es un sistema electroneumático?,Sistema que combina electricidad y neumática,Sistema hidráulico,Sistema térmico,Sistema de lubricación,Sistema que combina electricidad y neumática
+¿Para qué sirve un temporizador en un sistema de automatización?,Reducir costos,Controlar secuencia,Controlar tiempo,Mejorar la seguridad,Controlar tiempo
+¿Qué es un sensor magnético en un cilindro neumático?,Un actuador,Un detector de posición,Un regulador,Un filtro,Un detector de posición
+¿Qué es un PLC modular?,Un PLC pequeño,Un PLC con componentes intercambiables,Un PLC inalámbrico,Un PLC antiguo,Un PLC con componentes intercambiables
+¿Qué es una válvula 5/2 vías?,Tiene 5 conexiones y 2 posiciones,Tiene 5 salidas y 2 entradas,Tiene 5 conexiones y 2 salidas,Tiene 2 conexiones y 5 posiciones,Tiene 5 conexiones y 2 posiciones
+¿Qué es un contador en un programa ladder?,Un sensor,Un temporizador,Un dispositivo de medición,Un bloque funcional,Un bloque funcional
+¿Qué es la automatización industrial?,Uso de robots exclusivamente,Uso de máquinas grandes,Uso de procesos mecanizados,Uso de sistemas para realizar tareas sin intervención humana,Uso de sistemas para realizar tareas sin intervención humana
+¿Qué es una válvula de seguridad?,Regula presión,Libera exceso de presión,Detiene fugas,Activa sensores,Libera exceso de presión
+¿Qué es un sistema de control en lazo cerrado?,Sin retroalimentación,Con retroalimentación,Con múltiples salidas,Con una sola entrada,Con retroalimentación
+¿Qué es un ciclo automático en un proceso neumático?,Un ciclo manual,Un ciclo repetitivo sin intervención,Un ciclo de prueba,Un ciclo de arranque,Un ciclo repetitivo sin intervención
+¿Qué es un diagrama P&ID?,Diagrama de flujo eléctrico,Diagrama de instrumentación y tuberías,Diagrama de red,Diagrama de código,Diagrama de instrumentación y tuberías
+¿Qué es un sistema secuencial?,Sistema que opera por pasos definidos,Sistema aleatorio,Sistema paralelo,Sistema de alta tensión,Sistema que opera por pasos definidos
+¿Qué es una válvula 3/2 vías?,Tiene 3 conexiones y 2 posiciones,Tiene 3 salidas y 2 entradas,Tiene 2 conexiones y 3 posiciones,Tiene 2 salidas y 3 entradas,Tiene 3 conexiones y 2 posiciones
+¿Qué es un sensor fotoeléctrico?,Detecta color,Detecta luz,Detecta temperatura,Detecta vibraciones,Detecta luz
+¿Qué es una válvula de escape rápido?,Retrasa el aire,Libera aire rápidamente,Filtra aire,Regula presión,Libera aire rápidamente
+¿Qué es un módulo de entrada en un PLC?,Envía señales,Recibe señales,Almacena datos,Procesa señales,Recibe señales
+¿Qué es un módulo de salida en un PLC?,Procesa señales,Envía señales,Recibe señales,Guarda datos,Envía señales
+¿Qué es un sistema híbrido en automatización?,Solo neumático,Solo eléctrico,Combinación de tecnologías,Sin control,Combinación de tecnologías
+¿Qué es un contactor en un circuito de automatización?,Un sensor,Un interruptor electromecánico,Un fusible,Un transformador,Un interruptor electromecánico
+¿Qué es un temporizador TON en un PLC?,Temporizador de apagado,Temporizador de encendido,Temporizador de ciclo,Temporizador de espera,Temporizador de encendido
+¿Qué es un temporizador TOF en un PLC?,Temporizador de encendido,Temporizador de espera,Temporizador de apagado,Temporizador de ciclo,Temporizador de apagado
+¿Qué es un temporizador RTO en un PLC?,Temporizador de reinicio,Temporizador acumulativo,Temporizador de apagado,Temporizador de encendido,Temporizador acumulativo
+¿Qué es un pulsador NC (normalmente cerrado)?,Se cierra cuando se pulsa,Se abre cuando se pulsa,No tiene estado,No funciona,Se abre cuando se pulsa
+¿Qué es un pulsador NA (normalmente abierto)?,Se cierra cuando se pulsa,Se abre cuando se pulsa,No tiene estado,No funciona,Se cierra cuando se pulsa
+¿Qué es un relé de estado sólido?,Tiene partes móviles,No tiene partes móviles,Es mecánico,Es óptico,No tiene partes móviles
+¿Qué es un sistema de control distribuido (DCS)?,Sistema centralizado,Sistema con control en múltiples puntos,Sistema antiguo,Sistema manual,Sistema con control en múltiples puntos
+¿Qué es una interfaz hombre-máquina (HMI)?,Un sensor,Un dispositivo de visualización y control,Un actuador,Un cable,Un dispositivo de visualización y control
+¿Qué es un protocolo de comunicación industrial?,Un idioma técnico,Un conjunto de reglas para transmisión de datos,Un software,Código binario,Un conjunto de reglas para transmisión de datos
+¿Qué es un bus de campo (Fieldbus)?,Red de energía,Red de comunicación digital,Red de sensores,Red local,Red de comunicación digital
+¿Qué es un encoder en automatización?,Un sensor de temperatura,Un dispositivo de medición de posición angular,Un actuador,Un filtro,Un dispositivo de medición de posición angular
+¿Qué es un PID en control automático?,Un tipo de sensor,Un controlador proporcional-integral-derivativo,Un motor,Un temporizador,Un controlador proporcional-integral-derivativo
+¿Qué es un sistema SCADA?,Sistema de control manual,Sistema de adquisición de datos y control,Sistema de bajo nivel,Sistema de cálculo,Sistema de adquisición de datos y control
+¿Qué es un variador de frecuencia (VFD)?,Aumenta la presión,Controla la velocidad de motores eléctricos,Controla temperatura,Almacena energía,Controla la velocidad de motores eléctricos
+¿Qué es un convertidor analógico-digital en un PLC?,Transforma señales digitales a analógicas,Transforma señales analógicas a digitales,No hace nada,Almacena señales,Transforma señales analógicas a digitales
+¿Qué es un convertidor digital-analógico en un PLC?,Transforma señales digitales a analógicas,Transforma señales analógicas a digitales,No hace nada,Almacena señales,Transforma señales digitales a analógicas
+¿Qué es una red industrial Ethernet?,Red comercial adaptada,Rápida y confiable para automatización,Rápida pero insegura,Renta de internet,Rápida y confiable para automatización
+¿Qué es un sistema tolerante a fallas?,Que nunca falla,Que continúa funcionando tras fallos,Que se apaga ante fallos,Que no se puede usar,Que continúa funcionando tras fallos
+¿Qué es un sistema redundante en automatización?,Duplicado para evitar fallos,Sencillo,Cheaper,Más barato,Duplicado para evitar fallos
+¿Qué es un sistema de monitoreo remoto?,Monitoreo en sitio,Monitoreo desde distancia,Monitoreo manual,Monitoreo local,Monitoreo desde distancia
+¿Qué es un protocolo Modbus?,Protocolo antiguo,Protocolo moderno,Protocolo de alta velocidad,Protocolo de video,Protocolo antiguo
+¿Qué es un sistema de diagnóstico predictivo?,Repara antes de fallar,Repara después de fallar,No predice,Monitorea constantemente,Repara antes de fallar
+¿Qué es un sistema de mantenimiento preventivo?,Reparación tras fallo,Mantenimiento programado,Inspección aleatoria,Mantenimiento solo si falla,Mantenimiento programado
+¿Qué es un sistema de mantenimiento correctivo?,Reparación tras fallo,Mantenimiento programado,Inspección aleatoria,Mantenimiento preventivo,Reparación tras fallo
+¿Qué es un sistema de supervisión continua?,Monitoreo ocasional,Monitoreo constante,Monitoreo manual,Monitoreo nocturno,Monitoreo constante
+¿Qué es un sistema de control descentralizado?,Centralizado en un solo lugar,Distribuido en varias ubicaciones,Sin control,Sin sensores,Distribuido en varias ubicaciones
