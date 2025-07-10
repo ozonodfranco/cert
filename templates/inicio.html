@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examen</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    .inactivo {
+      background-color: #ccc;
+      color: #666;
+      cursor: not-allowed;
+    }
+	
+	.imgbg {
+		width: 28%; /* Ajusta según necesites */
+		height: auto; /* Mantiene proporción */
+	}
+	
+	/* Para tablets y dispositivos medianos */
+	@media (max-width: 768px) {
+    .imgbg {
+        width: 50%; /* Ajusta este valor según te convenga */
+		height: auto; /* Mantiene proporción */
+    }
+}
+  </style>
+</head>
+<body>
+	<!-- Mostrar imagen desde la carpeta estática -->
+  <img src="{{ url_for('static', filename='img/logo.webp') }}" alt="Logo" class = "imgbg">
+  <h1>Bienvenido al Examen</h1>
+  <p>Fecha actual: <span id="fecha-actual"></span></p>
+  <p>Examen disponible solo el <strong><span id="fecha-clave"></span></</strong></p>
+
+  <button id="boton-examen">Ingresar al examen</button>
+
+  <script>
+    const fechaSpan = document.getElementById('fecha-actual');
+	const fechaPac = document.getElementById('fecha-clave');
+    const boton = document.getElementById('boton-examen');
+    const ahora = new Date();
+
+    // Mostrar fecha actual
+    fechaSpan.textContent = ahora.toLocaleString("es-MX", {
+      weekday: "long", year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit"
+    });
+
+    // Rango permitido: 7 mayo 2025 entre 11:00 y 12:00 (mediodía)
+    const fechaPermitida = {
+      dia: 10,
+      mes: 6,  // inicia del 0 los meses
+      año: 2025,
+      horaInicio: 13,
+      minutoInicio: 30,
+      horaFin: 14,
+      minutoFin: 10
+    };
+	
+	// Crear objeto Date con la fecha permitida
+	const fechaPermitidaDate = new Date(
+    fechaPermitida.año,
+    fechaPermitida.mes,
+    fechaPermitida.dia,
+    fechaPermitida.horaInicio,
+    fechaPermitida.minutoInicio
+	);
+	
+	const fechaPermitidaDateF = new Date(
+	fechaPermitida.año,
+    fechaPermitida.mes,
+    fechaPermitida.dia,
+    fechaPermitida.horaFin,
+    fechaPermitida.minutoFin
+	);
+
+	// Mostrar la fecha clave (permitida)
+	fechaPac.textContent = fechaPermitidaDate.toLocaleString("es-MX", {
+		weekday: "long", year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" 
+	} ) + " hasta  " +  fechaPermitidaDateF.toLocaleString("es-MX", {
+		weekday: "long", year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" 
+	} );
+
+    const enFecha = ahora.getFullYear() === fechaPermitida.año &&
+                    ahora.getMonth() === fechaPermitida.mes &&
+                    ahora.getDate() === fechaPermitida.dia;
+
+    const minutosActuales = ahora.getHours() * 60 + ahora.getMinutes();
+    const minutosInicio = fechaPermitida.horaInicio * 60 + fechaPermitida.minutoInicio;
+    const minutosFin = fechaPermitida.horaFin * 60 + fechaPermitida.minutoFin;
+
+    const enHora = minutosActuales >= minutosInicio && minutosActuales <= minutosFin;
+
+    if (enFecha && enHora) {
+      boton.classList.remove("inactivo");
+      boton.addEventListener("click", () => {
+        window.location.href = "/formulario";
+      });
+    } else {
+      boton.classList.add("inactivo");
+      boton.addEventListener("click", () => {
+        alert("⚠️ El examen no esta activo");
+      });
+    }
+  </script>
+
+</body>
+</html>

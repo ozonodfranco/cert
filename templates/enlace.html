@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Enlaces a PDF</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      padding: 40px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #444;
+    }
+    .contenedor {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 10px 0;
+      background: #eef;
+      padding: 12px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    li:hover {
+      background: #dde;
+    }
+    a {
+      text-decoration: none;
+      color: #2a4f9c;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <h1>PDFs disponibles</h1>
+    <ul>
+      {% for archivo in archivos %}
+        <li><a href="{{ url_for('descargar_pdf', filename=archivo) }}" target="_blank">{{ archivo }}</a></li>
+      {% else %}
+        <li>No hay archivos PDF en la carpeta <code>tmp/</code>.</li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>

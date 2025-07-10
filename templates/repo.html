@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados de exámenes</title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js">
+   </script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .tabla-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow-x: auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .boton-reporte {
+      display: block;
+      text-align: center;
+      margin: 30px auto;
+    }
+
+    .btn-pdf {
+      padding: 12px 24px;
+      background-color: #28a745;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-pdf:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Resultados de exámenes</h1>
+
+  <div class="tabla-container">
+    {% if usuarios %}
+    <table id="tabla-resultados">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Grado</th>
+          <th>Grupo</th>
+          <th>Fecha y Hora</th>
+          <th>Calificación</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for usuario in usuarios %}
+        <tr>
+          <td>{{ usuario['Nombre'] }}</td>
+          <td>{{ usuario['Correo'] }}</td>
+          <td>{{ usuario['Grado'] }}</td>
+          <td>{{ usuario['Grupo'] }}</td>
+          <td>{{ usuario['Fecha y Hora'] }}</td>
+          <td>{{ usuario['Calificación'] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p>No hay registros disponibles.</p>
+    {% endif %}
+  </div>
+
+  <div class="boton-reporte">
+    <button class="btn-pdf" onclick="generarExcel()">Generar Reporte Excel</button>
+  </div>
+  <script>
+  // Datos pasados desde Flask
+  const usuarios = {{ usuarios|tojson }};
+  
+  function generarExcel() {
+  try {
+    // Verifica que los datos estén cargados
+    if (!usuarios || usuarios.length === 0) {
+      alert("❌ No hay datos para exportar.");
+      return;
+    }
+
+    // Crea un libro y una hoja de cálculo
+    const workbook = XLSX.utils.book_new();
+    const worksheet = XLSX.utils.json_to_sheet(usuarios);
+
+    // Agrega la hoja al libro
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Resultados");
+
+    // Genera y descarga el archivo Excel
+    XLSX.writeFile(workbook, 'resultados_examenes.xlsx');
+
+  } catch (error) {
+    console.error("Error al generar Excel:", error);
+    alert("❌ Error al generar el archivo Excel. Revisa la consola.");
+  }
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Examen</title>
+<style>
+#boton_enviar {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#boton_enviar:hover {
+  background-color: #0056b3;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.pregunta {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.opciones {
+  display: none; /* Oculto por defecto */
+  margin-left: 20px;
+}
+</style>
+</head>
+<body oncontextmenu="return false;">
+<div style="font-size: 1.2rem; font-weight: bold;">
+  Tiempo restante: <span id="temporizador">60:00</span>
+</div>
+
+<script>
+  // Temporizador
+  let minutos = 15;
+  let segundos = 0;
+  let temporizador = document.getElementById('temporizador');
+
+  let intervalo = setInterval(() => {
+    if (segundos === 0) {
+      if (minutos === 0) {
+        clearInterval(intervalo);
+        document.getElementById('preguntas_re').submit();  // Autoenvío
+        return;
+      }
+      minutos--;
+      segundos = 59;
+    } else {
+      segundos--;
+    }
+
+    temporizador.textContent =
+      (minutos < 10 ? '0' : '') + minutos + ':' +
+      (segundos < 10 ? '0' : '') + segundos;
+  }, 1000);
+
+  // Bloquea copiado
+  document.addEventListener('copy', function(e) {
+    e.preventDefault();
+    alert("Copiar contenido no está permitido.");
+  });
+
+  // Función para mostrar/ocultar opciones al hacer click en la pregunta
+  function toggleOpciones(elemento) {
+    const opciones = elemento.nextElementSibling;
+    if (opciones.style.display === "none") {
+      opciones.style.display = "block";
+    } else {
+      opciones.style.display = "none";
+    }
+  }
+</script>
+
+<h2>Examen</h2>
+<form id="preguntas_re" action="/resultado" method="POST">
+  {% for p in preguntas %}
+    <!-- Pregunta -->
+    <p class="pregunta" onclick="toggleOpciones(this)">
+      <b>{{ loop.index }}. {{ p.pregunta }}</b>
+    </p>
+
+    <!-- Opciones (inicialmente ocultas) -->
+    <div class="opciones">
+      {% for opcion in p.opciones %}
+        <label>
+          <input type="radio" name="pregunta_{{ p.indice }}" value="{{ opcion }}" required>
+          {{ opcion }}
+        </label><br>
+      {% endfor %}
+      <br>
+    </div>
+  {% endfor %}
+
+  <input id="boton_enviar" type="submit" value="Enviar respuestas">
+</form>
+</body>
+</html>
