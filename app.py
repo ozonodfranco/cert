@@ -187,6 +187,6 @@ if __name__ == '__main__':
 
 if __name__ == "__main__":
     import os
-    DEBUG_MODE = True  # Cambia a False antes de subir a producción
+    DEBUG_MODE = False  # Cambia a False antes de subir a producción
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=DEBUG_MODE)
